@@ -1,0 +1,39 @@
+{% extends 'menu/base.html' %}
+{% block title %}
+   {{Restaurant}}
+{% endblock %}
+
+{% block content %}
+
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
+        <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="{% url 'vse_menu' %}">Все рестораны</a>
+    </nav>
+    <div class="column card">
+        <div class="dev">
+                <div class="dev__restaurant">
+                    <div class="dev__meta">
+                        <h3>Название ресторана: {{ restaurant.name }}</a></h3>
+                            {% if restaurant.image1 %}
+                            <li>
+                                <img class="avatar avatar--xl dev__avatar" src="{{ restaurant.image1.url }}" /></a></h3>
+                            </li>
+                            {% endif %}
+                            {% if restaurant.image2 %}
+                                <img class="avatar avatar--xl dev__avatar" src="{{ restaurant.image2.url }}" /></a></h3>
+                            {% endif %}
+                            {% if restaurant.image3 %}
+                                <img class="avatar avatar--xl dev__avatar" src="{{ restaurant.image3.url }}" /></a></h3>
+                            {% endif %}
+
+                    </div> 
+                </div>
+        </div>
+    </div>
+</body>
+{% endblock %}

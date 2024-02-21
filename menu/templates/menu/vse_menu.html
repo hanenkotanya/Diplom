@@ -1,0 +1,30 @@
+{% extends 'menu/base.html' %}
+{% block title %}
+   {{Restaurant}}
+{% endblock %}
+
+{% block content %}
+
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+    {% for restaurant in restaurants %}
+    <div class="column card">
+        <div class="dev">
+            <a href="{% url 'vse_menu' %}" class="card__body">
+                <div class="dev__restaurant">
+                    <div class="dev__meta">
+                        <h3>Название ресторана: {{ restaurant.name }}</a></h3>
+                        <p><a class="project__author" href="{% url 'one_menu' restaurant.id%}"><img class="avatar avatar--xl dev__avatar" src="{{ restaurant.mini_image.url }}" /></a></h3>
+                    </div> 
+                </div>
+        </div>
+    </div>
+    {% endfor %}
+</body>
+{% endblock %}
+
